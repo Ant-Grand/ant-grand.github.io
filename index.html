@@ -8,11 +8,19 @@
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-dark.css">
     <script src="javascripts/scale.fix.js"></script>
+    <script src="javascripts/latest.release.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        GetLatestReleaseInfo("#grand", "https://api.github.com/repos/Ant-Grand/Grand/releases/latest");
+        GetLatestReleaseInfo("#grand-ui", "https://api.github.com/repos/Ant-Grand/GrandUI/releases/latest");
+    });
+    </script>
   </head>
   <body>
     <div class="wrapper">
@@ -24,13 +32,18 @@
           <li class="single"><a href="https://github.com/Ant-Grand">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
-      <section>
+	<section>
+	<h4>Documentation</h4>
         <p><a href="/Grand/grand.html">Introduction</a></p>
+      </section>
+      <section>
+        <h4>Latest releases</h4>
+        <p><a id="grand-download" href="https://github.com/Ant-Grand/Grand/releases/latest">Grand <span id="grand-release-info"></span></a></p>
+        <p><a id="grand-ui-download" href="https://github.com/Ant-Grand/GrandUI/releases/latest">GrandUI <span id="grand-ui-release-info"></span></a></p>
       </section>
     </div>
     <footer>
     </footer>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
   </body>
 </html>
