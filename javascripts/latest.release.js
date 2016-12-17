@@ -14,9 +14,9 @@ function GetLatestReleaseInfo(product, url) {
         } else {
             timeAgo = (dateDiff / oneDay).toFixed(1) + " days ago";
         }
-        var releaseInfo = release.tag_name + " was released " + timeAgo + " and downloaded " + downloadCount.toLocaleString() + " times.";
+        var releaseInfo = release.tag_name + " (&ldquo;" + release.name+ "&rdquo;) was released " + timeAgo + " and downloaded " + downloadCount.toLocaleString() + " times.";
         $(product + "-download").attr("href", asset.browser_download_url);
-        $(product + "-release-info").text(releaseInfo);
+        $(product + "-release-info").html(" " + releaseInfo);
         $(product + "-release-info").fadeIn("slow");
     });
 }
